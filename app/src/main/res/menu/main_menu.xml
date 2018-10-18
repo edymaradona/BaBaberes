@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/profile"
+        android:icon="@drawable/account_outline"
+        android:orderInCategory="2"
+        android:title="@string/profile_menu_item"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/followingPosts"
+        android:icon="@drawable/bookmark_plus_outline"
+        android:orderInCategory="2"
+        android:title="@string/following_post_menu_item"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/search"
+        android:icon="@drawable/file_document_box_outline"
+        android:orderInCategory="1"
+        android:title="@string/search_menu_item"
+        app:showAsAction="ifRoom" />
+
+</menu>
+

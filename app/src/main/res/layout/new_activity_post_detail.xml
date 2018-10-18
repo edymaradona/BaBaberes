@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/newCommentContainer">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/imageContainer"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/post_detail_image_height"
+                android:layout_alignParentTop="true"
+                android:layout_marginBottom="@dimen/intrinsic_padding">
+
+                <ImageView
+                    android:id="@+id/postImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_stub"
+                    android:transitionName="@string/post_image_transition_name"
+                    android:visibility="visible"
+                    tools:targetApi="lollipop" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="@dimen/progress_bar_size"
+                    android:layout_height="@dimen/progress_bar_size"
+                    android:layout_centerInParent="true"
+                    android:visibility="visible" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="16dp"
+                    android:layout_alignBottom="@+id/postImageView"
+                    android:background="@drawable/round_status">
+
+                    <com.pixplicity.fontview.FontAppCompatTextView
+                        style="@style/FontTextViewStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14dp"
+                        android:textColor="#5c5c5c"
+                        android:text="Status : "/>
+
+                    <com.pixplicity.fontview.FontAppCompatTextView
+                        style="@style/FontTextViewStyle"
+                        android:id="@+id/tvStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14dp"
+                        android:textColor="#5c5c5c"
+                        android:text="Menunggu"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="24dp"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:paddingTop="16dp">
+
+                <include
+                    android:id="@+id/countersContainer"
+                    layout="@layout/counters_panel"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <com.pixplicity.fontview.FontAppCompatTextView
+                    android:id="@+id/titleTextView"
+                    style="@style/FontTextViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Judul"
+                    android:textSize="16dp" />
+
+                <com.pixplicity.fontview.FontAppCompatTextView
+                    android:id="@+id/descriptionEditText"
+                    style="@style/FontTextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:autoLink="all"
+                    android:lineSpacingExtra="4dp"
+                    android:text="Deskripsi"
+                    android:textAppearance="@style/TextAppearance.Second"
+                    android:textSize="13dp" />
+
+                <LinearLayout
+                    android:id="@+id/authorContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+
+                    <com.rozdoum.socialcomponents.views.CircularImageView
+                        android:id="@+id/authorImageView"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignTop="@+id/imageContainer"
+                        android:layout_marginRight="16dp"
+                        app:border="false"
+                        app:shadow="true"
+                        app:shadow_color="@color/circle_image_shadow"
+                        app:shadow_radius="@dimen/circle_image_shadow_radius"
+                        tools:targetApi="lollipop" />
+
+                    <TextView
+                        android:id="@+id/authorLabelTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="@dimen/intrinsic_padding"
+                        android:text="@string/posted_by_label"
+                        android:textAppearance="@style/TextAppearance.Second.Light" />
+
+                    <TextView
+                        android:id="@+id/authorTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textAppearance="@style/TextAppearance.Highlight" />
+
+                </LinearLayout>
+
+                <com.pixplicity.fontview.FontAppCompatTextView
+                    style="@style/FontTextViewStyle"
+                    android:id="@+id/commentsLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="Komentar"
+                    android:textColor="#848484"
+                    android:textSize="14dp" />
+
+                <RelativeLayout
+                    android:id="@+id/commentsParentContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/commentsLabel">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/commentsRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        app:layoutManager="LinearLayoutManager"
+                        tools:listitem="@layout/comment_list_item" />
+
+                    <ProgressBar
+                        android:id="@+id/commentsProgressBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/warningCommentsTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/intrinsic_padding"
+                        android:text="@string/internet_connection_failed"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <View
+        android:id="@+id/shadow"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_above="@+id/newCommentContainer"
+        android:background="@drawable/top_shadow" />
+
+    <LinearLayout
+        android:id="@+id/newCommentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/commentEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:hint="@string/comment_text_hint"
+            android:inputType="textMultiLine"
+            android:maxHeight="@dimen/new_comment_max_height"
+            android:minHeight="@dimen/new_comment_min_height"
+            android:padding="@dimen/intrinsic_padding"
+            android:layout_marginLeft="8dp"
+            android:textSize="14dp"
+            android:lineSpacingExtra="3dp"
+            app:met_typeface="fonts/ProductSansRegular.ttf"
+            app:met_hideUnderline="true" />
+
+        <LinearLayout
+            android:id="@+id/sendButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="12dp"
+            android:background="@drawable/round_button"
+            android:enabled="false"
+            android:minWidth="0dp">
+
+            <com.pixplicity.fontview.FontAppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/FontTextViewStyle"
+                android:textColor="#FFF"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                android:text="KIRIM"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

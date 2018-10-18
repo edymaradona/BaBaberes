@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="2.5dp"
+    android:layout_marginTop="2.5dp"
+    app:ignore="NamespaceTypo"
+    card_view:cardBackgroundColor="@android:color/white"
+    card_view:cardCornerRadius="0dp"
+    card_view:cardElevation="@dimen/post_card_elevation">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <com.rozdoum.socialcomponents.views.CircularImageView
+                android:id="@+id/authorImageView"
+                android:layout_width="@dimen/post_list_image_author"
+                android:layout_height="@dimen/post_list_image_author"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/postImageView"
+                android:layout_marginRight="16dp"
+                app:border="false"
+                app:shadow="true"
+                app:shadow_color="@color/circle_image_shadow"
+                app:shadow_radius="@dimen/circle_image_shadow_radius" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <com.pixplicity.fontview.FontAppCompatTextView
+                    android:id="@+id/tvAuthor"
+                    style="@style/FontTextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:text="Nama Author"
+                    android:textColor="#000"
+                    android:textSize="16dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="4dp"
+                        android:src="@drawable/map_marker_circle"
+                        android:tint="#5b5b5b" />
+
+                    <com.pixplicity.fontview.FontAppCompatTextView
+                        android:id="@+id/alamatAduan"
+                        style="@style/FontTextViewStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Alamat Aduan"
+                        android:textColor="#ef609e"
+                        android:textSize="13dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/postImageView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/post_list_item_image_height"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_stub" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="16dp"
+                android:layout_alignBottom="@+id/postImageView"
+                android:background="@drawable/round_status">
+
+                <com.pixplicity.fontview.FontAppCompatTextView
+                    style="@style/FontTextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14dp"
+                    android:textColor="#5c5c5c"
+                    android:text="Status : "/>
+
+                <com.pixplicity.fontview.FontAppCompatTextView
+                    style="@style/FontTextViewStyle"
+                    android:id="@+id/tvStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14dp"
+                    android:textColor="#5c5c5c"
+                    android:text="Menunggu"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <include
+                android:id="@+id/countersContainer"
+                layout="@layout/counters_panel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.pixplicity.fontview.FontAppCompatTextView
+                android:id="@+id/titleTextView"
+                style="@style/FontTextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Judul"
+                android:textSize="15dp" />
+
+            <com.pixplicity.fontview.FontAppCompatTextView
+                android:id="@+id/detailsTextView"
+                style="@style/FontTextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:lineSpacingExtra="4dp"
+                android:maxLines="3"
+                android:textColor="#5e5e5e"
+                android:text="Judul"
+                android:textSize="13dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
+

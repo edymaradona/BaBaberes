@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="2dp"
+    android:layout_marginTop="2dp"
+    app:cardCornerRadius="0dp"
+    app:cardElevation="2dp">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/large_intrinsic_padding">
+
+        <com.rozdoum.socialcomponents.views.CircularImageView
+            android:id="@+id/photoImageView"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:transitionName="@string/post_author_image_transition_name"
+            app:border="false"
+            app:shadow="false"
+            app:shadow_radius="@dimen/circle_image_shadow_radius"
+            tools:src="@drawable/ic_stub"
+            tools:targetApi="lollipop" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <com.pixplicity.fontview.FontAppCompatTextView
+                android:id="@+id/nameTextView"
+                style="@style/FontTextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/intrinsic_padding"
+                android:layout_weight="1"
+                android:textAppearance="@style/TextAppearance.Title"
+                android:textSize="16dp"
+                tools:text="John Smith " />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="@dimen/intrinsic_padding"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:tint="#6779be"
+                    android:src="@drawable/map_marker_circle"/>
+
+                <com.pixplicity.fontview.FontAppCompatTextView
+                    android:id="@+id/alamatTextView"
+                    style="@style/FontTextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:layout_gravity="center"
+                    android:ellipsize="end"
+                    android:layout_marginLeft="8dp"
+                    android:lineSpacingExtra="2dp"
+                    android:textAppearance="@style/TextAppearance.Title"
+                    android:textColor="#778bd4"
+                    android:textSize="13dp"
+                    tools:text="Alamat " />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <com.rozdoum.socialcomponents.views.FollowButton
+            android:id="@+id/followButton"
+            style="@style/FollowButton"
+            android:visibility="invisible"
+            tools:text="Follow back" />
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

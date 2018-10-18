@@ -1,0 +1,70 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF"
+    tools:context="com.rozdoum.socialcomponents.main.login.LoginActivity">
+
+    <LinearLayout
+        android:id="@+id/buttonsContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="160dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="24dp"
+            android:src="@drawable/logo_skripsi"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="260dp"
+            android:src="@drawable/eaa"/>
+
+        <RelativeLayout
+            android:id="@+id/googleSignInButton"
+            android:layout_width="200dp"
+            android:layout_height="@dimen/base_login_button_height"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/login_screen_button_margin"
+            android:background="@drawable/round_button"
+            android:elevation="4dp">
+
+            <com.pixplicity.fontview.FontAppCompatTextView
+                style="@style/FontTextViewStyleNews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Get Started"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:textColor="@drawable/login_button_text_selector" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/facebookSignInButton"
+            android:layout_width="@dimen/base_login_button_width"
+            android:layout_height="@dimen/base_login_button_height"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/login_screen_button_margin"
+            android:elevation="4dp">
+
+            <com.pixplicity.fontview.FontAppCompatTextView
+                android:layout_width="wrap_content"
+                style="@style/FontTextViewStyle"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/button_login_with_facebook"
+                android:textColor="#7f85d9" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</FrameLayout>
+

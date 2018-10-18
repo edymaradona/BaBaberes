@@ -1,0 +1,19 @@
+{
+  "name": "social-app-android",
+  "version": "1.0.0",
+  "description": "SocialComponents\r =============",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rozdoum/social-app-android.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rozdoum/social-app-android/issues"
+  },
+  "homepage": "https://github.com/rozdoum/social-app-android#readme"
+}
